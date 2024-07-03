@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .main-div {
+        width: 90%;
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f0f0f0;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+      input,
+      select,
+      textarea {
+        margin-bottom: 10px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+      input[type="checkbox"],
+      input[type="radio"] {
+        margin-right: 6px;
+      }
+      input[type="range"] {
+        width: 100%;
+      }
+    </style>
+    <title>Extended Form Example</title>
+  </head>
+  <body>
+    <div class="main-div">
+      <h1>Extended HTML Form</h1>
+      <form action="#">
+        <label for="text-input">Text Input:</label>
+        <input
+          type="text"
+          id="text-input"
+          name="text-input"
+          placeholder="Enter text"
+          value="Sample Text"
+          required
+        />
+
+        <label for="email-input">Email Input:</label>
+        <input
+          type="email"
+          id="email-input"
+          name="email-input"
+          placeholder="Enter email"
+          required
+        />
+
+        <label for="password-input">Password Input:</label>
+        <input
+          type="password"
+          id="password-input"
+          name="password-input"
+          placeholder="Enter password"
+          minlength="8"
+          maxlength="20"
+          pattern="^(?=.*\d)(?=.*[!@#$%^&*]).{8,20}$"
+          required
+          title="Password must contain at least one digit, one lowercase and one uppercase letter, one special character, and be between 8 to 20 characters long."
+        />
+
+        <label for="number-input">Number Input:</label>
+        <input
+          type="number"
+          id="number-input"
+          name="number-input"
+          placeholder="Enter number"
+          min="0"
+          max="100"
+          step="5"
+          value="50"
+          required
+          disabled
+        />
+
+        <label for="date-input">Date Input:</label>
+        <input type="date" id="date-input" name="date-input" required />
+
+        <label for="time-input">Time Input:</label>
+        <input type="time" id="time-input" name="time-input" required />
+
+        <label for="datetime-input">Datetime-local Input:</label>
+        <input
+          type="datetime-local"
+          id="datetime-input"
+          name="datetime-input"
+          required
+        />
+
+        <label for="color-input">Color Input:</label>
+        <input
+          type="color"
+          id="color-input"
+          name="color-input"
+          value="#000000"
+          required
+        />
+
+        <label for="tel-input">Telephone Input:</label>
+        <input
+          type="tel"
+          id="tel-input"
+          name="tel-input"
+          placeholder="Enter phone number"
+          pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+          required
+        />
+
+        <label for="url-input">URL Input:</label>
+        <input
+          type="url"
+          id="url-input"
+          name="url-input"
+          placeholder="Enter URL"
+          required
+        />
+
+        <label for="textarea-input">Textarea:</label>
+        <textarea
+          id="textarea-input"
+          name="textarea-input"
+          rows="4"
+          placeholder="Enter your message"
+          required
+        ></textarea>
+
+        <label for="select-input">Select:</label>
+        <select id="select-input" name="select-input" required>
+          <option value="">--Please choose an option--</option>
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </select>
+
+        <label for="file-input">File Upload:</label>
+        <input
+          type="file"
+          id="file-input"
+          name="file-input"
+          accept=".jpg, .jpeg, .png"
+          required
+        />
+
+        <label for="checkbox-input">Checkbox:</label>
+        <input
+          type="checkbox"
+          id="checkbox-input1"
+          name="checkbox-input1"
+          value="checkbox1"
+        />
+        <label for="checkbox-input1">Checkbox 1</label>
+        <input
+          type="checkbox"
+          id="checkbox-input2"
+          name="checkbox-input2"
+          value="checkbox2"
+        />
+        <label for="checkbox-input2">Checkbox 2</label>
+
+        <label for="radio-input">Radio Buttons:</label>
+        <input
+          type="radio"
+          id="radio-input1"
+          name="radio-input"
+          value="radio1"
+        />
+        <label for="radio-input1">Radio 1</label>
+        <input
+          type="radio"
+          id="radio-input2"
+          name="radio-input"
+          value="radio2"
+        />
+        <label for="radio-input2">Radio 2</label>
+
+        <label for="range-input">Range Input:</label>
+        <input
+          type="range"
+          id="range-input"
+          name="range-input"
+          min="0"
+          max="100"
+          step="5"
+          value="50"
+          required
+        />
+
+        <label for="datalist-input">Datalist Input:</label>
+        <input
+          type="text"
+          id="datalist-input"
+          name="datalist-input"
+          list="options"
+          required
+        />
+        <datalist id="options">
+          <option value="Option 1"></option>
+          <option value="Option 2"></option>
+          <option value="Option 3"></option>
+        </datalist>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </form>
+    </div>
+  </body>
+</html>
